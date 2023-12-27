@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#313133"
+    tools:context=".MainActivity">
+
+
+    <ImageButton
+        android:id="@+id/orderStokButton"
+        android:layout_width="383dp"
+        android:layout_height="168dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/vinill" />
+
+    <ImageButton
+        android:id="@+id/orderingRandomButton"
+        android:layout_width="382dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderStokButton"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/random" />
+
+    <TextView
+        android:id="@+id/OrderStokView"
+        android:layout_width="269dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="116dp"
+        android:background="#9F656565"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/instok"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/orderStokButton"
+        app:layout_constraintEnd_toEndOf="@+id/orderStokButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/orderStokButton"
+        app:layout_constraintVertical_bias="0.496" />
+
+    <TextView
+        android:id="@+id/OrderRandomView"
+        android:layout_width="289dp"
+        android:layout_height="29dp"
+        android:background="#9F656565"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/randomvinill"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/orderingRandomButton"
+        app:layout_constraintEnd_toEndOf="@+id/orderingRandomButton"
+        app:layout_constraintTop_toTopOf="@+id/orderingRandomButton"
+        app:layout_constraintVertical_bias="0.52" />
+
+    <Button
+        android:id="@+id/storeOrdersButton"
+        android:layout_width="345dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="164dp"
+        android:text="@string/history_orders"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderingRandomButton" />
+
+    <Button
+        android:id="@+id/yourOrderButton"
+        android:layout_width="347dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="48dp"
+        android:text="@string/incard"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/storeOrdersButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/RandomVinillaDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        android:text="Заказать случайную пластинку"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/VinillaImage"
+        android:layout_width="200dp"
+        android:layout_height="155dp"
+        android:layout_marginStart="141dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginBottom="50dp"
+        android:contentDescription="Image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RandomVinillaDisplay"
+        tools:srcCompat="@drawable/random" />
+
+    <CheckBox
+        android:id="@+id/PopularChecker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="50dp"
+        android:onClick="updatePopularPrice"
+        android:text="Популярное"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/VinillaImage" />
+
+    <CheckBox
+        android:id="@+id/EnLangChecker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="107dp"
+        android:onClick="updateEnlangPrice"
+        android:text="ENG"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/RuLangChecker"
+        app:layout_constraintTop_toBottomOf="@+id/NewChecker" />
+
+    <CheckBox
+        android:id="@+id/RuLangChecker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="20dp"
+        android:onClick="updateRulangPrice"
+        android:text="RUS"
+        app:layout_constraintEnd_toStartOf="@+id/EnLangChecker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PopularChecker" />
+
+    <CheckBox
+        android:id="@+id/NewChecker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="25dp"
+        android:onClick="updateNewPrice"
+        android:text="Новое"
+        app:layout_constraintEnd_toStartOf="@+id/RareChecker"
+        app:layout_constraintStart_toEndOf="@+id/PopularChecker"
+        app:layout_constraintTop_toBottomOf="@+id/VinillaImage" />
+
+    <CheckBox
+        android:id="@+id/RareChecker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="61dp"
+        android:onClick="updateRarePrice"
+        android:text="Редкое"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/NewChecker"
+        app:layout_constraintTop_toBottomOf="@+id/VinillaImage" />
+
+    <Spinner
+        android:id="@+id/QuantitySpinner"
+        android:layout_width="148dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="49dp"
+        android:contentDescription="@string/appbar_scrolling_view_behavior"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EnLangChecker" />
+
+    <Spinner
+        android:id="@+id/SizeTrackSpinner"
+        android:layout_width="148dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="@string/appbar_scrolling_view_behavior"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toStartOf="@+id/QuantitySpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EnLangChecker" />
+
+    <TextView
+        android:id="@+id/PriceDisplayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="169dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="184dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/QuantitySpinner" />
+
+    <Button
+        android:id="@+id/AddCoffeeToOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="165dp"
+        android:onClick="addRandom"
+        android:text="Добавить"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PriceDisplayer" />
+
+    <TextView
+        android:id="@+id/chooseOpt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Выберите жанр и количество треков"
+        app:layout_constraintBottom_toTopOf="@+id/SizeTrackSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

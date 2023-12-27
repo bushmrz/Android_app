@@ -10,12 +10,24 @@ package com.example.rucafeandroid;
 import java.text.DecimalFormat;
 
 public class MenuItem {
+
     private double priceOfItem;
     private int quantity;
+
+    private String name;
 
     public MenuItem(double priceOfItem, int quantity) {
         this.priceOfItem = priceOfItem;
         this.quantity = quantity;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getPriceOfItem() {

@@ -18,6 +18,8 @@ public class RandomChoice extends MenuItem implements Customizable {
     public static final double DJAZ_style = 2;
     public static final double CLASSIC_style = 3;
 
+    private String output;
+
 
     public RandomChoice(int style, boolean popular, boolean newest, boolean rare, boolean rulang, boolean enlang, int quantity) {
         super(ROCK_PRICE, quantity);

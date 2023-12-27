@@ -50,6 +50,7 @@ public class Your_Order_Activity extends AppCompatActivity implements AdapterVie
     @Override
     protected void onStart() {
         super.onStart();
+        updatePrices();
         adapter.notifyDataSetChanged();
     }
 
@@ -117,21 +118,22 @@ public class Your_Order_Activity extends AppCompatActivity implements AdapterVie
 
     private void loadOrderData() {
         OrderDatabaseHelper dbHelper = new OrderDatabaseHelper(this);
-        Order lastOrder = dbHelper.getLastOrder(); // Метод для получения последнего заказа
+        Order lastOrder = dbHelper.getLastOrder(); // Получение последнего заказа
 
         if (lastOrder != null) {
-            MainActivity.order = lastOrder;
+            MainActivity.order = lastOrder; // Обновление глобального заказа
 
             ordersString.clear();
             for (MenuItem item : lastOrder.getItemList()) {
-                ordersString.add(item.toString()); // Преобразование каждого элемента заказа в строку для отображения
+                ordersString.add(item.toString());
             }
         } else {
-            MainActivity.order = new Order(); // Если в базе данных нет заказов, создаем новый пустой заказ
+            MainActivity.order = new Order(); // Создание нового заказа, если в БД нет данных
         }
 
         adapter.notifyDataSetChanged();
     }
+
 
     /** метод обрабатывает логику оформления заказа: проверяет наличие товаров в корзине,
         запрашивает у пользователя подтверждение оформления и в случае подтверждения
